@@ -1,6 +1,17 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  border: 0.05rem solid ${(props) => props.theme.colors.border.primary};
-  background: ${(props) => props.theme.colors.background.secondary};
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #50e9fe;
+  color: white;
+  width: 5rem;
+  margin: 0 auto;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #40a3b1;
+  }
 `;
