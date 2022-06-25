@@ -1,12 +1,17 @@
 const theme = {
   colors: {
     background: {
-      primary: "#fff",
-      secondary: "#606c76",
+      primary: "#000000",
+      secondary: "#14213d",
+      success: "#02c39a",
+      danger: "#d62828",
+      warning: "#fca311",
+      neutral1: "#e5e5e5",
+      neutral2: "#ffffff",
     },
     text: {
-      primary: "#606c76",
-      secondary: "#9b4dca",
+      primary: "#000000",
+      secondary: "#ffffff",
     },
     border: {
       primary: "rgba(0, 0, 0, 0.3)",
