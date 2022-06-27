@@ -10,6 +10,12 @@ export const Hero = styled.div`
   text-align: center;
   padding: 2rem 1rem;
   min-height: 100vh;
+  width: 50%;
+  display: none;
+
+  @media (min-width: 600px) {
+    display: block;
+  }
 `;
 
 export const Title = styled.h1`

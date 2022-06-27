@@ -1,11 +1,19 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  width: 100%;
+
+  @media (min-width: 600px) {
+    width: 50%;
+  }
+`;
+
 export const Form = styled.form`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  margin-top: 40%;
-  width: 100%;
+  max-width: 30rem;
+  margin: 15% auto;
   padding: 0 2rem;
 `;
 

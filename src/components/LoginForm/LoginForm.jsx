@@ -8,7 +8,7 @@ const LoginForm = ({ handleSubmit }) => {
   const [loginValues, updateLoginValues] = useState();
 
   return (
-    <>
+    <S.Container>
       <S.Form
         onSubmit={(e) => {
           e.preventDefault();
@@ -40,7 +40,7 @@ const LoginForm = ({ handleSubmit }) => {
 
         <RegisterLink>Don't have an account?</RegisterLink>
       </S.Form>
-    </>
+    </S.Container>
   );
 };
 
