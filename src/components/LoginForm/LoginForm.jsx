@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Button from "../Button/Button";
 import * as S from "./LoginForm.styles";
+import RegisterLink from "../RegisterLink/RegisterLink";
 
 const LoginForm = ({ handleSubmit }) => {
   const [loginValues, updateLoginValues] = useState();
@@ -15,6 +16,7 @@ const LoginForm = ({ handleSubmit }) => {
           handleSubmit(loginValues);
         }}
       >
+        <h2>Sign In</h2>
         <S.Textinput
           type="email"
           label="Email"
@@ -26,12 +28,17 @@ const LoginForm = ({ handleSubmit }) => {
         <S.Textinput
           type="password"
           label="Password"
-          placeholder="password"
+          placeholder="Password"
           handleChange={(passwordValue) =>
             updateLoginValues({ ...loginValues, password: passwordValue })
           }
         />
-        <Button type="submit">Login</Button>
+        <S.FlexContainer>
+          <S.Link>Forgot Password?</S.Link>
+          <Button type="submit">Sign In</Button>
+        </S.FlexContainer>
+
+        <RegisterLink>Don't have an account?</RegisterLink>
       </S.Form>
     </>
   );

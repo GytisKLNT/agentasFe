@@ -7,7 +7,6 @@ export const Button = styled.button`
   background-color: #50e9fe;
   color: white;
   width: 5rem;
-  margin: 0 auto;
   transition: 0.3s;
   cursor: pointer;
 
