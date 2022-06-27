@@ -20,19 +20,25 @@ export const Textinput = styled.input`
   }
 `;
 
-export const Link = styled.a`
-  color: gray;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: color 0.3s;
-
-  &:hover {
-    color: black;
-  }
-`;
-
 export const FlexContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
+`;
+
+export const BackArrow = styled.a`
+  text-decoration: none;
+  color: gray;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  transition: 0.3s ease-in;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  line-height: 2rem;
+
+  &:hover {
+    background-color: gray;
+    color: black;
+  }
 `;

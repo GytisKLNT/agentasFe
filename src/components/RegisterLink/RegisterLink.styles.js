@@ -8,7 +8,7 @@ export const RegisterLink = styled.a`
   color: #50e9fe;
   font-size: 0.8rem;
   margin-top: 5rem;
-
+  text-align: center;
   transition: background 0.3s;
   cursor: pointer;
 

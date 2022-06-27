@@ -7,13 +7,22 @@ export const Hero = styled.div`
   background-position: center;
   background-size: cover;
   color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  text-align: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;
 `;
 
 export const Title = styled.h1`
   font-size: 3rem;
+  margin: 0;
+`;
+
+export const Subtitle = styled.h2`
+  font-size: 1rem;
+`;
+
+export const Logo = styled.img`
+  width: 15rem;
+  box-sizing: border-box;
+  margin-top: 25%;
 `;
