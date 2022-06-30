@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-`;
-
-export const Hero = styled.div`
-  display: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 `;

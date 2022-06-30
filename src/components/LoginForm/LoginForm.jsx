@@ -14,6 +14,7 @@ const LoginForm = ({ handleSubmit }) => {
           e.preventDefault();
 
           handleSubmit(loginValues);
+          console.log(loginValues);
         }}
       >
         <h2>Sign In</h2>

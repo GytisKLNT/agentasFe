@@ -7,7 +7,7 @@ const RegisterForm = ({ handleSubmit }) => {
   const [registerValues, updateRegisterValues] = useState();
 
   return (
-    <>
+    <S.Container>
       <S.Form
         onSubmit={(e) => {
           e.preventDefault();
@@ -37,7 +37,7 @@ const RegisterForm = ({ handleSubmit }) => {
           <Button type="submit">Sign Up</Button>
         </S.FlexContainer>
       </S.Form>
-    </>
+    </S.Container>
   );
 };
 

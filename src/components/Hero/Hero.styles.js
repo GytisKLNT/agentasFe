@@ -19,8 +19,8 @@ export const Hero = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 3rem;
-  margin: 0;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
 `;
 
 export const Subtitle = styled.h2`

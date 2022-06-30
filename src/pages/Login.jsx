@@ -1,9 +1,9 @@
 import React from "react";
-import Hero from "../Hero/Hero";
-import LoginForm from "../LoginForm/LoginForm";
-import Container from "../Container/Container";
+import Container from "../components/Container/Container";
+import Hero from "../components/Hero/Hero";
+import LoginForm from "../components/LoginForm/LoginForm";
 
-const LoginView = () => {
+const Login = () => {
   return (
     <Container>
       <Hero title="Basketball Agent" subtitle="Find your Team or Teammate" />
@@ -12,4 +12,4 @@ const LoginView = () => {
   );
 };
 
-export default LoginView;
+export default Login;
