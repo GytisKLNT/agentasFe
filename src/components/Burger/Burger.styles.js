@@ -4,8 +4,9 @@ export const StyledBurger = styled.div`
   width: 2rem;
   height: 2rem;
   position: fixed;
-  top: 15px;
-  right: 20px;
+  top: 1.5rem;
+  right: 2rem;
+  cursor: pointer;
 
   z-index: 20;
   display: none;
@@ -19,7 +20,7 @@ export const StyledBurger = styled.div`
   div {
     width: 2rem;
     height: 0.25rem;
-    background-color: ${({ open }) => (open ? "#ccc" : "#333")};
+    background-color: ${({ open }) => (open ? "#c4c4c4" : "#ffffff")};
     border-radius: 1rem;
     transform-origin: 1px;
     transition: all 0.3s linear;
