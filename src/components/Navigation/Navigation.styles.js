@@ -2,16 +2,18 @@ import styled from "styled-components";
 
 export const Header = styled.nav`
   width: 100%;
-  height: 55px;
+  background-color: black;
   border-bottom: 2px solid gray;
-  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1rem;
+  box-sizing: border-box;
 `;
 
-export const Logo = styled.div`
-  padding: 15px 0;
+export const Logo = styled.img`
+  width: 5rem;
+  height: 5rem;
 `;
 
 export const List = styled.ul`

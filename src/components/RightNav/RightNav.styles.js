@@ -10,6 +10,15 @@ export const List = styled.ul`
 
   li {
     padding-left: 2rem;
+    color: #c4c4c4;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+    font-size: 1.5rem;
+
+    &:hover,
+    &:focus {
+      color: #ffff;
+    }
   }
 
   @media (max-width: 768px) {
