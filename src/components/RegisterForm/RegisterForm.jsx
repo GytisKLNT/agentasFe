@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Button from "../Button/Button";
 import * as S from "./RegisterForm.styles";
+import TextInput from "../TextInput/TextInput";
 
 const RegisterForm = ({ handleSubmit }) => {
   const [registerValues, updateRegisterValues] = useState();
@@ -17,7 +18,7 @@ const RegisterForm = ({ handleSubmit }) => {
       >
         <S.BackArrow href="#">←</S.BackArrow>
         <h2>Sign Up</h2>
-        <S.Textinput
+        <TextInput
           type="email"
           label="Email"
           placeholder="info@example.com"
@@ -25,7 +26,7 @@ const RegisterForm = ({ handleSubmit }) => {
             updateRegisterValues({ ...registerValues, email: emailValue })
           }
         />
-        <S.Textinput
+        <TextInput
           type="password"
           label="Password"
           placeholder="Password"

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Button from "../Button/Button";
 import * as S from "./LoginForm.styles";
 import RegisterLink from "../RegisterLink/RegisterLink";
+import TextInput from "../TextInput/TextInput";
 
 const LoginForm = ({ handleSubmit }) => {
   const [loginValues, updateLoginValues] = useState();
@@ -14,21 +15,18 @@ const LoginForm = ({ handleSubmit }) => {
           e.preventDefault();
 
           handleSubmit(loginValues);
-          console.log(loginValues);
         }}
       >
         <h2>Sign In</h2>
-        <S.Textinput
+        <TextInput
           type="email"
-          label="Email"
           placeholder="info@example.com"
           handleChange={(emailValue) =>
             updateLoginValues({ ...loginValues, email: emailValue })
           }
         />
-        <S.Textinput
+        <TextInput
           type="password"
-          label="Password"
           placeholder="Password"
           handleChange={(passwordValue) =>
             updateLoginValues({ ...loginValues, password: passwordValue })
