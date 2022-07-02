@@ -23,11 +23,15 @@ const CardList = ({ teams }) => {
 };
 
 CardList.propTypes = {
-  products: PropTypes.arrayOf(
+  teams: PropTypes.arrayOf(
     PropTypes.shape({
-      title: PropTypes.string.isRequired,
+      team_name: PropTypes.string.isRequired,
+      city: PropTypes.string.isRequired,
+      league: PropTypes.string.isRequired,
+      position: PropTypes.string.isRequired,
+      phone: PropTypes.string.isRequired,
+      timestamp: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
-      // price: PropTypes.number.isRequired,
     })
   ).isRequired,
 };
