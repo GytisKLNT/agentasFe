@@ -12,6 +12,7 @@ const Card = ({
   timestamp,
   className,
 }) => {
+  const date = new Date(timestamp);
   return (
     <S.Card className={className}>
       <S.List>
@@ -23,7 +24,11 @@ const Card = ({
       </S.List>
 
       <S.Description>{description}</S.Description>
-      <span>Skelbimas sukurtas: {timestamp}</span>
+      <span>
+        Skelbimas sukurtas: {date.getFullYear()}-
+        {(date.getMonth() + 1).toString().padStart(2, "0")}-
+        {date.getDate().toString().padStart(2, "0")}
+      </span>
     </S.Card>
   );
 };

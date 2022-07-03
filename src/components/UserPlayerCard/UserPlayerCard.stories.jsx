@@ -6,11 +6,13 @@ export default {
   component: UserPlayerCard,
 };
 
-export const Primary = () => (
-  <UserPlayerCard
-    id={1}
-    city="Šiauliai"
-    position="C"
-    timestamp="2022-07-03"
-  ></UserPlayerCard>
-);
+const items = [
+  {
+    id: 1,
+    city: "Šiauliai",
+    position: "C",
+    timestamp: "2022-07-03",
+  },
+];
+
+export const Primary = () => <UserPlayerCard items={items} />;

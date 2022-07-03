@@ -5,7 +5,8 @@ export const List = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
-  margin-top: 0;
+  margin-right: 2rem;
+  margin-top: 1rem;
   padding: 0;
   box-sizing: border-box;
 
@@ -22,6 +23,8 @@ export const List = styled.ul`
     padding-top: 4rem;
     transition: transform 0.3s ease-in-out;
     font-size: 1.2rem;
+    margin-right: 0;
+    margin-top: 0;
 
     li {
       padding: 2rem;

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import * as S from "./Burger.styles";
 import RightNav from "../RightNav/RightNav";
 
@@ -16,7 +15,5 @@ const Burger = (props) => {
     </>
   );
 };
-
-Burger.propTypes = {};
 
 export default Burger;

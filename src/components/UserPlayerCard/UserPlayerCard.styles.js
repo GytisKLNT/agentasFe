@@ -18,6 +18,7 @@ export const Card = styled.div`
 
   @media (max-width: 600px) {
     display: block;
+    margin: 1rem;
   }
 `;
 

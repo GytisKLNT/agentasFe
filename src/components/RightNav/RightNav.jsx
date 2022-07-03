@@ -7,13 +7,13 @@ const RightNav = ({ open, links }) => {
   return (
     <S.List open={open}>
       <li>
-        <S.Pages to="/Home">HOME</S.Pages>
+        <S.Pages to="/home">HOME</S.Pages>
       </li>
       <li>
-        <S.Pages to="/Players">PLAYERS</S.Pages>
+        <S.Pages to="/players">PLAYERS</S.Pages>
       </li>
       <li>
-        <S.Pages to="/Teams">TEAMS</S.Pages>
+        <S.Pages to="/teams">TEAMS</S.Pages>
       </li>
     </S.List>
   );

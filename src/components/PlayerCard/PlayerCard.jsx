@@ -12,6 +12,8 @@ const PlayerCard = ({
   timestamp,
   className,
 }) => {
+  const date = new Date(timestamp);
+
   return (
     <S.Card className={className}>
       <S.List>
@@ -19,12 +21,16 @@ const PlayerCard = ({
           Vardas Pavardė: {name} {last_name}
         </li>
         <li>Miestas: {city}</li>
-        <li>Ieškoma pozicija: {position}</li>
+        <li>Pozicija: {position}</li>
         <li>Telefonas: {phone}</li>
       </S.List>
 
       <S.Description>{description}</S.Description>
-      <span>Skelbimas sukurtas: {timestamp}</span>
+      <span>
+        Skelbimas sukurtas: {date.getFullYear()}-
+        {(date.getMonth() + 1).toString().padStart(2, "0")}-
+        {date.getDate().toString().padStart(2, "0")}
+      </span>
     </S.Card>
   );
 };
