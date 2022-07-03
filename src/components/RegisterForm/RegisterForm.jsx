@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 import * as S from "./RegisterForm.styles";
 import TextInput from "../TextInput/TextInput";
 
-const RegisterForm = ({ handleSubmit }) => {
+const RegisterForm = ({ children, handleSubmit }) => {
   const [registerValues, updateRegisterValues] = useState();
 
   return (
@@ -20,7 +20,7 @@ const RegisterForm = ({ handleSubmit }) => {
         <h2>Sign Up</h2>
         <TextInput
           type="email"
-          label="Email"
+          isRequired
           placeholder="info@example.com"
           handleChange={(emailValue) =>
             updateRegisterValues({ ...registerValues, email: emailValue })
@@ -28,7 +28,7 @@ const RegisterForm = ({ handleSubmit }) => {
         />
         <TextInput
           type="password"
-          label="Password"
+          isRequired
           placeholder="Password"
           handleChange={(passwordValue) =>
             updateRegisterValues({ ...registerValues, password: passwordValue })
@@ -37,6 +37,7 @@ const RegisterForm = ({ handleSubmit }) => {
         <S.FlexContainer>
           <Button type="submit">Sign Up</Button>
         </S.FlexContainer>
+        {children}
       </S.Form>
     </S.Container>
   );
@@ -44,6 +45,7 @@ const RegisterForm = ({ handleSubmit }) => {
 
 RegisterForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
+  children: PropTypes.node,
 };
 
 export default RegisterForm;

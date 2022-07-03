@@ -5,7 +5,7 @@ import * as S from "./LoginForm.styles";
 import RegisterLink from "../RegisterLink/RegisterLink";
 import TextInput from "../TextInput/TextInput";
 
-const LoginForm = ({ handleSubmit }) => {
+const LoginForm = ({ children, handleSubmit }) => {
   const [loginValues, updateLoginValues] = useState();
 
   return (
@@ -21,6 +21,7 @@ const LoginForm = ({ handleSubmit }) => {
         <TextInput
           type="email"
           placeholder="info@example.com"
+          id="email"
           handleChange={(emailValue) =>
             updateLoginValues({ ...loginValues, email: emailValue })
           }
@@ -28,6 +29,7 @@ const LoginForm = ({ handleSubmit }) => {
         <TextInput
           type="password"
           placeholder="Password"
+          id="password"
           handleChange={(passwordValue) =>
             updateLoginValues({ ...loginValues, password: passwordValue })
           }
@@ -37,6 +39,8 @@ const LoginForm = ({ handleSubmit }) => {
           <Button type="submit">Sign In</Button>
         </S.FlexContainer>
 
+        {children}
+
         <RegisterLink>Don't have an account?</RegisterLink>
       </S.Form>
     </S.Container>
@@ -45,6 +49,7 @@ const LoginForm = ({ handleSubmit }) => {
 
 LoginForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
+  children: PropTypes.node,
 };
 
 export default LoginForm;

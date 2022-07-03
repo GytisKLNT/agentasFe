@@ -4,4 +4,5 @@ export const Notification = styled.div`
   background: #eee;
   border-radius: 0.5rem;
   padding: 1rem;
+  margin-top: 2rem;
 `;
