@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Container from "../components/Container/Container";
 import Hero from "../components/Hero/Hero";
 import RegisterForm from "../components/RegisterForm/RegisterForm";
@@ -6,6 +7,8 @@ import Notification from "../components/Notification/Notification";
 
 const Register = () => {
   const [error, setError] = useState();
+
+  const navigate = useNavigate();
 
   const registerUser = async (inputs) => {
     try {
@@ -26,7 +29,9 @@ const Register = () => {
         return setError(data.err);
       }
 
-      return setError(data.msg);
+      setError(data.msg);
+
+      return navigate("/");
     } catch (error) {
       return setError(error.msg);
     }
@@ -36,7 +41,7 @@ const Register = () => {
     <Container>
       <Hero title="Basketball Agent" subtitle="Find your Team or Teammate" />
       <RegisterForm handleSubmit={registerUser}>
-        {error && <Notification>{error}</Notification>}
+        {error && <Notification color="danger">{error}</Notification>}
       </RegisterForm>
     </Container>
   );

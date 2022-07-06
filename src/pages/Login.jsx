@@ -30,10 +30,9 @@ const Login = () => {
       }
 
       localStorage.setItem("token", data.token);
-      console.log(localStorage.getItem("token"));
       navigate("/home");
 
-      // return setError(data.msg);
+      return setError(data.msg);
     } catch (error) {
       return setError(error.msg);
     }
@@ -43,7 +42,7 @@ const Login = () => {
     <Container>
       <Hero title="Basketball Agent" subtitle="Find your Team or Teammate" />
       <LoginForm handleSubmit={loginUser}>
-        {error && <Notification>{error}</Notification>}
+        {error && <Notification color="danger">{error}</Notification>}
       </LoginForm>
     </Container>
   );
