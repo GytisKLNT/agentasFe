@@ -16,7 +16,7 @@ const RegisterForm = ({ children, handleSubmit }) => {
           handleSubmit(registerValues);
         }}
       >
-        <S.BackArrow href="#">←</S.BackArrow>
+        <S.BackArrow to="/">←</S.BackArrow>
         <h2>Sign Up</h2>
         <TextInput
           type="email"

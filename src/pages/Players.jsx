@@ -5,16 +5,20 @@ import UserPlayerCard from "../components/UserPlayerCard/UserPlayerCard";
 import PlayerCardList from "../components/PlayerCardList/PlayerCardList";
 import HomeHeroLinks from "../components/HomeHeroLinks/HomeHeroLinks";
 import Notification from "../components/Notification/Notification";
+import { useNavigate } from "react-router-dom";
+import Button from "../components/Button/Button";
 
 const Players = () => {
   const [data, setData] = useState();
   const [allData, setAllData] = useState();
   const [error, updateError] = useState();
   const [allError, updateAllError] = useState();
-  const [deleteError, setdeleteError] = useState();
-  const [deleteSuccess, setdeleteSuccess] = useState();
+  const [deleteError, setDeleteError] = useState();
+  const [deleteSuccess, setDeleteSuccess] = useState();
 
-  const getData = async () => {
+  const navigate = useNavigate();
+
+  const getUserData = async () => {
     try {
       const res = await fetch(
         `${process.env.REACT_APP_BACKEND_URL}/v1/players/userplayer`,
@@ -54,8 +58,6 @@ const Players = () => {
 
       const resAllData = await res.json();
 
-      setAllData(resAllData);
-
       if (resAllData.length === 0) {
         return updateAllError("Skelbimų nėra");
       }
@@ -63,41 +65,58 @@ const Players = () => {
       if (!resAllData) {
         return updateAllError("Loading...");
       }
-
       return setAllData(resAllData);
     } catch (err) {
       return updateAllError(err.msg);
     }
   };
 
-  useEffect(() => {
-    getData();
-    getAllData();
-  }, [deleteSuccess]);
-
   const deleteItem = async (id) => {
     try {
-      const res = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/v1/players/delete/${id}`,
-        {
-          headers: {
-            authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
+      if (id) {
+        const res = await fetch(
+          `${process.env.REACT_APP_BACKEND_URL}/v1/players/delete/${id}`,
+          {
+            method: "DELETE",
+            headers: {
+              authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
+
+        const resDeletedData = await res.json();
+
+        if (!resDeletedData) {
+          return setDeleteError(resDeletedData.msg);
         }
-      );
 
-      const resDeletedData = await res.json();
-      console.log(resDeletedData, id);
-
-      return setdeleteSuccess(id);
+        setDeleteSuccess(resDeletedData.msg);
+        getUserData();
+        getAllData();
+      }
     } catch (err) {
-      return setdeleteError(err.msg);
+      return setDeleteError(err.msg);
     }
   };
 
+  useEffect(() => {
+    getUserData();
+    getAllData();
+  }, []);
+
   return (
     <>
-      <Navigation />
+      <Navigation>
+        <Button
+          type="button"
+          handleClick={() => {
+            localStorage.removeItem("token");
+            navigate("/");
+          }}
+        >
+          Log Out
+        </Button>
+      </Navigation>
       <Section>
         <HomeHeroLinks
           toOne="/addplayers"
@@ -111,13 +130,15 @@ const Players = () => {
           <Notification color="danger">{deleteError}</Notification>
         )}
         {deleteSuccess && (
-          <Notification color="success">Skelbimas Ištrintas</Notification>
+          <Notification color="success">{deleteSuccess}</Notification>
         )}
-        {data && <UserPlayerCard items={data} handleDelete={deleteItem} />}
+        {data && (
+          <UserPlayerCard items={data} handleDelete={(id) => deleteItem(id)} />
+        )}
 
         <h2>Visi Skelbimai</h2>
         {allError && <div>{allError}</div>}
-        {data && <PlayerCardList players={allData} />}
+        {allData && <PlayerCardList players={allData} />}
       </Section>
     </>
   );

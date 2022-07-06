@@ -1,14 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import * as S from "./UserTeamCard.styles";
 import DeleteButton from "../DeleteButton/DeleteButton";
 
 const UserTeamCard = ({ items, handleDelete }) => {
-  const [itemDelete, setItemDelete] = useState();
-
-  useEffect(() => {
-    handleDelete(itemDelete);
-  }, [handleDelete, itemDelete]);
+  const [itemDelete, setItemDelete] = useState(0);
 
   return (
     <>
@@ -46,7 +42,10 @@ const UserTeamCard = ({ items, handleDelete }) => {
               <DeleteButton
                 type="button"
                 handleClick={() => {
+                  console.log(item.id);
                   setItemDelete(item.id);
+                  console.log(itemDelete);
+                  handleDelete(itemDelete);
                 }}
               />
             </div>

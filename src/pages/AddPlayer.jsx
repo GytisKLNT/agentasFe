@@ -3,10 +3,13 @@ import HomeHero from "../components/HomeHero/HomeHero";
 import Navigation from "../components/Navigation/Navigation";
 import PlayerForm from "../components/PlayerForm/PlayerForm";
 import Notification from "../components/Notification/Notification";
+import { useNavigate } from "react-router-dom";
+import Button from "../components/Button/Button";
 
 const AddPlayer = (props) => {
   const [error, setError] = useState();
-  const [success, setSuccess] = useState();
+
+  const navigate = useNavigate();
 
   const addPlayer = async (inputs) => {
     try {
@@ -24,11 +27,11 @@ const AddPlayer = (props) => {
 
       const data = await res.json();
 
-      if (data.err) {
-        return setError(data.err);
+      if (!data || data.length === 0) {
+        return setError(data.msg);
       }
 
-      return setSuccess(data.msg);
+      return navigate("/players");
     } catch (error) {
       return setError(error.msg);
     }
@@ -36,14 +39,23 @@ const AddPlayer = (props) => {
 
   return (
     <>
-      <Navigation />
+      <Navigation>
+        <Button
+          type="button"
+          handleClick={() => {
+            localStorage.removeItem("token");
+            navigate("/");
+          }}
+        >
+          Log Out
+        </Button>
+      </Navigation>
       <HomeHero
         title="Pridėk savo skelbimą"
         subtitle="Padėk komandoms surasti tave"
       >
         <PlayerForm handleSubmit={addPlayer}>
           {error && <Notification color="danger">{error}</Notification>}
-          {success && <Notification color="success">{success}</Notification>}
         </PlayerForm>
       </HomeHero>
     </>

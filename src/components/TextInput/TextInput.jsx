@@ -9,6 +9,7 @@ const TextInput = ({ id, type, placeholder, value, handleChange }) => {
       id={id}
       placeholder={placeholder}
       value={value}
+      required
       onChange={(e) => handleChange(e.target.value)}
     />
   );

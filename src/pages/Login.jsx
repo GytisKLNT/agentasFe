@@ -32,7 +32,7 @@ const Login = () => {
       if (data.token) {
         localStorage.setItem("token", data.token);
 
-        navigate("/home");
+        return navigate("/home");
       }
 
       return setError(data.msg);

@@ -17,4 +17,6 @@ const items = [
   },
 ];
 
-export const Primary = () => <UserTeamCard items={items} />;
+export const Primary = () => (
+  <UserTeamCard items={items} handleDelete={() => console.log("delete")} />
+);

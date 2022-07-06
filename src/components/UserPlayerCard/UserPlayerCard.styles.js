@@ -8,7 +8,7 @@ export const Card = styled.div`
   color: #fff;
   display: flex;
   justify-content: space-around;
-  margin: 0 auto;
+  margin: 2rem auto;
   max-width: 30rem;
   padding: 2rem 1rem;
   text-align: center;

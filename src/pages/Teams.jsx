@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from "react";
 import Navigation from "../components/Navigation/Navigation";
 import Section from "../components/Section/Section";
-import UserTeamCard from "../components/UserTeamCard/UserTeamCard";
 import CardList from "../components/CardList/CardList";
 import HomeHeroLinks from "../components/HomeHeroLinks/HomeHeroLinks";
+import UserTeamCard from "../components/UserTeamCard/UserTeamCard";
 import Notification from "../components/Notification/Notification";
+import { useNavigate } from "react-router-dom";
+import Button from "../components/Button/Button";
 
 const Teams = () => {
   const [data, setData] = useState();
   const [allData, setAllData] = useState();
   const [error, updateError] = useState();
   const [allError, updateAllError] = useState();
-  const [deleteError, setdeleteError] = useState();
-  const [deleteSuccess, setdeleteSuccess] = useState();
+  const [deleteError, setDeleteError] = useState();
+  const [deleteSuccess, setDeleteSuccess] = useState();
 
-  const getData = async () => {
+  const navigate = useNavigate();
+
+  const getUserData = async () => {
     try {
       const res = await fetch(
         `${process.env.REACT_APP_BACKEND_URL}/v1/teams/userteam`,
@@ -58,7 +62,6 @@ const Teams = () => {
       if (!resAllData) {
         return updateAllError("Loading...");
       }
-
       return setAllData(resAllData);
     } catch (err) {
       updateAllError(err.msg);
@@ -67,32 +70,50 @@ const Teams = () => {
 
   const deleteItem = async (id) => {
     try {
-      const res = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/v1/teams/delete/${id}`,
-        {
-          headers: {
-            authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
+      if (id) {
+        const res = await fetch(
+          `${process.env.REACT_APP_BACKEND_URL}/v1/teams/delete/${id}`,
+          {
+            method: "DELETE",
+            headers: {
+              authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
+
+        const resDeletedData = await res.json();
+
+        if (!resDeletedData) {
+          return setDeleteError(resDeletedData.msg);
         }
-      );
 
-      const resDeletedData = await res.json();
-      console.log(resDeletedData, id);
-
-      return setdeleteSuccess(id);
+        setDeleteSuccess(resDeletedData.msg);
+        getUserData();
+        getAllData();
+      }
     } catch (err) {
-      return setdeleteError(err.msg);
+      return setDeleteError(err.msg);
     }
   };
 
   useEffect(() => {
+    getUserData();
     getAllData();
-    getData();
-  }, [deleteSuccess]);
+  }, []);
 
   return (
     <>
-      <Navigation />
+      <Navigation>
+        <Button
+          type="button"
+          handleClick={() => {
+            localStorage.removeItem("token");
+            navigate("/");
+          }}
+        >
+          Log Out
+        </Button>
+      </Navigation>
       <Section>
         <HomeHeroLinks
           toOne="/addplayers"
@@ -106,11 +127,13 @@ const Teams = () => {
           <Notification color="danger">{deleteError}</Notification>
         )}
         {deleteSuccess && (
-          <Notification color="success">Skelbimas Ištrintas</Notification>
+          <Notification color="success">{deleteSuccess}</Notification>
         )}
-        {data && <UserTeamCard items={data} handleDelete={deleteItem} />}
+        {data && (
+          <UserTeamCard items={data} handleDelete={(id) => deleteItem(id)} />
+        )}
         <h2>Visi Skelbimai</h2>
-        {allError && <div>{allError}</div>}
+        {!allData && <div>{allError}</div>}
         {allData && <CardList teams={allData} />}
       </Section>
     </>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   width: 100%;
@@ -34,7 +35,7 @@ export const FlexContainer = styled.div`
   justify-content: end;
 `;
 
-export const BackArrow = styled.a`
+export const BackArrow = styled(Link)`
   border-radius: 50%;
   color: gray;
   font-size: 1.5rem;
