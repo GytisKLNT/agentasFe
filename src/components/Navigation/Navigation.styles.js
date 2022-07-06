@@ -9,6 +9,8 @@ export const Header = styled.nav`
   align-items: center;
   padding: 0 1rem;
   box-sizing: border-box;
+  position: fixed;
+  top: 0;
 `;
 
 export const Logo = styled.img`

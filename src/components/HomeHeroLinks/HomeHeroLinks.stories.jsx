@@ -9,6 +9,11 @@ export default {
 
 export const Primary = () => (
   <BrowserRouter>
-    <HomeHeroLinks to="/players" text="Text" />
+    <HomeHeroLinks
+      toOne="/players"
+      textOne="Text"
+      toTwo="/teams"
+      textTwo="Text"
+    />
   </BrowserRouter>
 );

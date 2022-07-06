@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import * as S from "./Navigation.styles";
 import Burger from "../Burger/Burger";
 
@@ -15,7 +14,5 @@ const Navigation = (props) => {
     </S.Header>
   );
 };
-
-Navigation.propTypes = {};
 
 export default Navigation;

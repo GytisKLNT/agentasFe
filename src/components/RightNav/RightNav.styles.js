@@ -5,6 +5,7 @@ export const List = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
+  align-items: center;
   margin-right: 2rem;
   margin-top: 1rem;
   padding: 0;

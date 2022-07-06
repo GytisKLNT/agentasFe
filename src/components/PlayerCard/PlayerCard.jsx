@@ -18,11 +18,21 @@ const PlayerCard = ({
     <S.Card className={className}>
       <S.List>
         <li>
-          Vardas Pavardė: {name} {last_name}
+          <S.Span>Vardas Pavardė: </S.Span>
+          {name} {last_name}
         </li>
-        <li>Miestas: {city}</li>
-        <li>Pozicija: {position}</li>
-        <li>Telefonas: {phone}</li>
+        <li>
+          <S.Span>Miestas: </S.Span>
+          {city}
+        </li>
+        <li>
+          <S.Span>Pozicija: </S.Span>
+          {position}
+        </li>
+        <li>
+          <S.Span>Telefonas: </S.Span>
+          {phone}
+        </li>
       </S.List>
 
       <S.Description>{description}</S.Description>

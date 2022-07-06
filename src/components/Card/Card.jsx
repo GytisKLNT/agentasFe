@@ -16,11 +16,26 @@ const Card = ({
   return (
     <S.Card className={className}>
       <S.List>
-        <li>Komanda: {team_name}</li>
-        <li>Miestas: {city}</li>
-        <li>Lyga: {league}</li>
-        <li>Ieškoma pozicija: {position}</li>
-        <li>Telefonas: {phone}</li>
+        <li>
+          <S.Span>Komanda: </S.Span>
+          {team_name}
+        </li>
+        <li>
+          <S.Span>Miestas: </S.Span>
+          {city}
+        </li>
+        <li>
+          <S.Span>Lyga: </S.Span>
+          {league}
+        </li>
+        <li>
+          <S.Span>Ieškoma pozicija: </S.Span>
+          {position}
+        </li>
+        <li>
+          <S.Span>Telefonas: </S.Span>
+          {phone}
+        </li>
       </S.List>
 
       <S.Description>{description}</S.Description>

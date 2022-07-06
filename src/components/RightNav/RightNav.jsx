@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./RightNav.styles";
-import { Link } from "react-router-dom";
 
-const RightNav = ({ open, links }) => {
+const RightNav = ({ open, children }) => {
   return (
     <S.List open={open}>
       <li>
@@ -15,10 +14,14 @@ const RightNav = ({ open, links }) => {
       <li>
         <S.Pages to="/teams">TEAMS</S.Pages>
       </li>
+      {children}
     </S.List>
   );
 };
 
-RightNav.propTypes = {};
+RightNav.propTypes = {
+  open: PropTypes.bool,
+  children: PropTypes.node,
+};
 
 export default RightNav;

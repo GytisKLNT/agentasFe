@@ -6,4 +6,9 @@ export default {
   component: Notification,
 };
 
-export const Primary = () => <Notification>Notification Text</Notification>;
+export const Danger = () => (
+  <Notification color="danger">Notification Text</Notification>
+);
+export const Success = () => (
+  <Notification color="success">Notification Text</Notification>
+);

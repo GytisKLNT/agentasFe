@@ -11,11 +11,7 @@ export const HomeHero = styled.div`
   text-align: center;
   padding: 2rem 1rem;
   min-height: 100vh;
-  display: none;
-
-  @media (min-width: 600px) {
-    display: block;
-  }
+  margin-top: 5rem;
 `;
 
 export const Title = styled.h1`

@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const Card = styled.div`
   padding: 2rem 1rem;
-  background-color: #b5b5b5;
+  background-color: #000000;
+  color: #fff;
   border-radius: 0.2rem;
   box-shadow: 0.5px 0.5px 5px 0.5px rgba(0, 0, 0, 0.75);
   text-align: center;
@@ -24,4 +25,8 @@ export const Description = styled.p`
   padding: 1rem 1rem;
   text-align: center;
   font-size: 0.8rem;
+`;
+
+export const Span = styled.span`
+  color: #50e9fe;
 `;
