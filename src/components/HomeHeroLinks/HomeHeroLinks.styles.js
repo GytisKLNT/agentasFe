@@ -2,18 +2,18 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const HeroLink = styled(Link)`
-  padding: 2rem;
-  margin: 2rem;
-  border: none;
-  border-radius: 0.3rem;
   background-color: #50e9fe;
-  color: white;
-  transition: 0.3s;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-  font-size: 1.5rem;
+  border-radius: 0.3rem;
+  border: none;
   box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin: 2rem;
+  padding: 2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
 
   &:hover {
     background-color: #40a3b1;

@@ -4,7 +4,7 @@ import * as S from "./RegisterLink.styles";
 
 const RegisterLink = ({ children }) => {
   return (
-    <S.RegisterLink>
+    <S.RegisterLink to="/">
       {children} <S.Span>Sign Up</S.Span>
     </S.RegisterLink>
   );

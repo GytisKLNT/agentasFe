@@ -12,8 +12,8 @@ export const Form = styled.form`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  max-width: 30rem;
   margin: 15% auto;
+  max-width: 30rem;
   padding: 0 2rem;
 `;
 
@@ -29,7 +29,7 @@ export const Link = styled.a`
 `;
 
 export const FlexContainer = styled.div`
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 `;

@@ -1,16 +1,17 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const RegisterLink = styled.a`
-  padding: 0.5rem 1rem;
-  border: 0.1rem solid #50e9fe;
-  border-radius: 0.3rem;
+export const RegisterLink = styled(Link)`
   background-color: #e3fcff;
+  border-radius: 0.3rem;
+  border: 0.1rem solid #50e9fe;
   color: #50e9fe;
+  cursor: pointer;
   font-size: 0.8rem;
   margin-top: 5rem;
+  padding: 0.5rem 1rem;
   text-align: center;
   transition: background 0.3s;
-  cursor: pointer;
 
   &:hover {
     background-color: #40a3b1;

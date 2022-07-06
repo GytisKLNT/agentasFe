@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  padding: 2rem 1rem;
+  align-items: center;
   background-color: #000000;
-  color: #fff;
   border-radius: 0.2rem;
   box-shadow: 0.5px 0.5px 5px 0.5px rgba(0, 0, 0, 0.75);
-  text-align: center;
+  color: #fff;
   display: flex;
-  align-items: center;
-  max-width: 30rem;
-  margin: 0 auto;
   justify-content: space-around;
+  margin: 0 auto;
+  max-width: 30rem;
+  padding: 2rem 1rem;
+  text-align: center;
 
   p {
     font-size: 0.8rem;
@@ -24,14 +24,14 @@ export const Card = styled.div`
 `;
 
 export const List = styled.ul`
+  box-sizing: border-box;
   list-style: none;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 
   li {
-    margin-bottom: 0.5rem;
     font-size: 0.8rem;
+    margin-bottom: 0.5rem;
   }
 `;
 

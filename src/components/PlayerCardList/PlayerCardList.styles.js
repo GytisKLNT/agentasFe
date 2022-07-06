@@ -12,11 +12,11 @@ export const CardList = styled.div`
 
 export const CardItem = styled(Card)`
   box-sizing: border-box;
-  width: calc(33.33% - 2rem);
   margin: 1rem;
+  width: calc(33.33% - 2rem);
 
   @media (max-width: 600px) {
-    width: 90%;
     margin: 1rem auto;
+    width: 90%;
   }
 `;

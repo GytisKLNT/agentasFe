@@ -29,8 +29,11 @@ const Login = () => {
         return setError(data.err);
       }
 
-      localStorage.setItem("token", data.token);
-      navigate("/home");
+      if (data.token) {
+        localStorage.setItem("token", data.token);
+
+        navigate("/home");
+      }
 
       return setError(data.msg);
     } catch (error) {

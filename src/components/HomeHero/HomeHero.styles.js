@@ -4,14 +4,14 @@ import background from "../../assets/homeBg.jpg";
 export const HomeHero = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
     url(${background});
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  text-align: center;
-  padding: 2rem 1rem;
-  min-height: 100vh;
   margin-top: 5rem;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  text-align: center;
 `;
 
 export const Title = styled.h1`
