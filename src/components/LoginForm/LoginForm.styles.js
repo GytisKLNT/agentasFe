@@ -31,5 +31,5 @@ export const Link = styled.a`
 export const FlexContainer = styled.div`
   align-items: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 `;

@@ -35,7 +35,6 @@ const LoginForm = ({ children, handleSubmit }) => {
           }
         />
         <S.FlexContainer>
-          <S.Link>Forgot Password?</S.Link>
           <Button type="submit">Sign In</Button>
         </S.FlexContainer>
 

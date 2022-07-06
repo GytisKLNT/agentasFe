@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import LoginForm from "./LoginForm";
 
 export default {
@@ -7,5 +8,7 @@ export default {
 };
 
 export const Primary = () => (
-  <LoginForm handleSubmit={(values) => console.log(values)} />
+  <BrowserRouter>
+    <LoginForm handleSubmit={(values) => console.log(values)} />
+  </BrowserRouter>
 );

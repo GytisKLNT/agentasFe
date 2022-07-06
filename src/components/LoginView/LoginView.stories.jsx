@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import LoginView from "./LoginView";
 
 export default {
@@ -6,4 +7,8 @@ export default {
   component: LoginView,
 };
 
-export const Primary = () => <LoginView></LoginView>;
+export const Primary = () => (
+  <BrowserRouter>
+    <LoginView />
+  </BrowserRouter>
+);

@@ -1,6 +1,4 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
-import theme from "../../theme";
 import Button from "./Button";
 
 export default {
@@ -8,8 +6,4 @@ export default {
   component: Button,
 };
 
-export const Primary = () => (
-  <ThemeProvider theme={theme}>
-    <Button>Button Text</Button>
-  </ThemeProvider>
-);
+export const Primary = () => <Button>Button Text</Button>;

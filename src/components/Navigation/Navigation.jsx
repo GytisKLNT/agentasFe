@@ -1,18 +1,28 @@
 import React from "react";
 import * as S from "./Navigation.styles";
+import PropTypes from "prop-types";
 import Burger from "../Burger/Burger";
+import { Link } from "react-router-dom";
 
 import logo from "../../assets/logo.png";
 
-const Navigation = (props) => {
+const Navigation = ({ children }) => {
   return (
     <S.Header>
-      <S.Logo src={logo} alt="logo" />
+      <Link to="/home">
+        <S.Logo src={logo} alt="logo" />
+      </Link>
+      {children}
+
       <nav>
         <Burger />
       </nav>
     </S.Header>
   );
+};
+
+Navigation.propTypes = {
+  children: PropTypes.node,
 };
 
 export default Navigation;

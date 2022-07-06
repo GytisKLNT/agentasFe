@@ -6,7 +6,7 @@ export const Header = styled.nav`
   border-bottom: 2px solid gray;
   box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 0 1rem;
   position: fixed;
   top: 0;
@@ -16,6 +16,7 @@ export const Header = styled.nav`
 export const Logo = styled.img`
   height: 5rem;
   width: 5rem;
+  cursor: pointer;
 `;
 
 export const List = styled.ul`
