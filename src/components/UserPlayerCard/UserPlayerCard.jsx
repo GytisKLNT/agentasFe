@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./UserPlayerCard.styles";
 import DeleteButton from "../DeleteButton/DeleteButton";
 
 const UserPlayerCard = ({ items, handleDelete }) => {
-  const [itemDelete, setItemDelete] = useState(0);
-
   return (
     <>
       {items &&
@@ -34,8 +32,7 @@ const UserPlayerCard = ({ items, handleDelete }) => {
               <DeleteButton
                 type="button"
                 handleClick={() => {
-                  setItemDelete(item.id);
-                  handleDelete(itemDelete);
+                  handleDelete(item.id);
                 }}
               />
             </div>
