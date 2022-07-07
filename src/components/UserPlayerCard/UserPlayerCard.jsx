@@ -34,9 +34,7 @@ const UserPlayerCard = ({ items, handleDelete }) => {
               <DeleteButton
                 type="button"
                 handleClick={() => {
-                  console.log(item.id);
                   setItemDelete(item.id);
-                  console.log(itemDelete);
                   handleDelete(itemDelete);
                 }}
               />
