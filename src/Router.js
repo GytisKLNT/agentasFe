@@ -13,14 +13,8 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<Login />} />
-        <Route
-          exact
-          path="/home"
-          element={
-            localStorage.getItem("token") ? <Home /> : <Navigate to="/" />
-          }
-        />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
         <Route
           exact

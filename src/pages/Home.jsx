@@ -14,11 +14,10 @@ const Home = () => {
         <Button
           type="button"
           handleClick={() => {
-            localStorage.removeItem("token");
-            navigate("/");
+            navigate("/login");
           }}
         >
-          Log Out
+          Log In
         </Button>
       </Navigation>
       <HomeHero
