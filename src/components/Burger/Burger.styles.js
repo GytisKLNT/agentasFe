@@ -4,8 +4,8 @@ export const StyledBurger = styled.div`
   cursor: pointer;
   display: none;
   height: 2rem;
-  position: fixed;
-  right: 2rem;
+  
+  left: 2rem;
   top: 1.5rem;
   width: 2rem;
   z-index: 20;

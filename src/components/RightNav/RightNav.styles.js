@@ -21,9 +21,9 @@ export const List = styled.ul`
     margin-top: 0;
     padding-top: 4rem;
     position: fixed;
-    right: 0;
+    left: 0;
     top: 0;
-    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
     transition: transform 0.3s ease-in-out;
     width: 12rem;
 

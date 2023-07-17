@@ -3,10 +3,9 @@ import styled from "styled-components";
 export const Header = styled.nav`
   align-items: center;
   background-color: black;
-  border-bottom: 2px solid gray;
   box-sizing: border-box;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 0 1rem;
   position: fixed;
   top: 0;
@@ -14,9 +13,15 @@ export const Header = styled.nav`
 `;
 
 export const Logo = styled.img`
-  height: 5rem;
-  width: 5rem;
+  height: 6rem;
+  width: 6rem;
+  margin-left: 3.5rem;
   cursor: pointer;
+
+  /* @media (min-width: 768px) {
+    display: none;
+  } */
+
 `;
 
 export const List = styled.ul`

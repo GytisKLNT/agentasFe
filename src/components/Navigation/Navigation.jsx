@@ -9,14 +9,15 @@ import logo from "../../assets/logo.png";
 const Navigation = ({ children }) => {
   return (
     <S.Header>
+      
+        <Burger />
+      
       <Link to="/home">
         <S.Logo src={logo} alt="logo" />
       </Link>
       {children}
 
-      <nav>
-        <Burger />
-      </nav>
+
     </S.Header>
   );
 };
